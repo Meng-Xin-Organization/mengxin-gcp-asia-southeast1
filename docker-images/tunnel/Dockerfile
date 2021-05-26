@@ -1,4 +1,4 @@
-FROM nginx:1.19.9
+FROM nginx:latest
 
 # RUN unlink /etc/nginx/sites-enabled/default
 
