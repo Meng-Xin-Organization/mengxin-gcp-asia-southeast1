@@ -30,6 +30,13 @@ docker push mengxin891029/tunnel-mengxin-ml:latest
 kubectl apply -f k8s/web/tunnel-mengxin-ml
 kubectl set image --namespace web deployments/tunnel-mengxin-ml-deployment tunnel-mengxin-ml=mengxin891029/tunnel-mengxin-ml:$GIT_SHA
 
+# update grpc-mengxin-ml
+docker build -t mengxin891029/grpc-mengxin-ml:latest -t mengxin891029/grpc-mengxin-ml:$GIT_SHA -f ./docker-images/grpc/Dockerfile ./docker-images/grpc
+docker push mengxin891029/grpc-mengxin-ml:$GIT_SHA
+docker push mengxin891029/grpc-mengxin-ml:latest
+kubectl apply -f k8s/web/grpc-mengxin-ml
+kubectl set image --namespace web deployments/grpc-mengxin-ml-deployment grpc-mengxin-ml=mengxin891029/grpc-mengxin-ml:$GIT_SHA
+
 # update argo-tunnel-tunnel-mengxin-ml
 kubectl apply -f k8s/web/argo-tunnel-tunnel-mengxin-ml
 
