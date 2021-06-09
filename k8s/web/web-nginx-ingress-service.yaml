@@ -8,7 +8,6 @@ metadata:
         # nginx.ingress.kubernetes.io/ssl-passthrough: "true"
         # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
-        # nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
 spec:
     tls:
         - hosts:
@@ -21,7 +20,6 @@ spec:
               - jupyter.mengxin.ml
               - prometheus.mengxin.ml
               - grafana.mengxin.ml
-              - grpc.mengxin.ml
           secretName: mengxin-ml-cert
     rules:
         - host: sea.mengxin.ml
@@ -87,10 +85,3 @@ spec:
         #             backend:
         #                 serviceName: grafana-mengxin-ml
         #                 servicePort: 80
-        - host: grpc.mengxin.ml
-          http:
-              paths:
-                  - path: /
-                    backend:
-                        serviceName: grpc-mengxin-ml-clusterip
-                        servicePort: 50051

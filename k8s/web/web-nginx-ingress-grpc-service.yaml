@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+    name: web-nginx-ingress-grpc-service
+    namespace: web
+    annotations:
+        kubernetes.io/ingress.class: nginx
+        # nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+        # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+spec:
+    tls:
+        - hosts:
+              - grpc.mengxin.ml
+          secretName: mengxin-ml-cert
+    rules:
+        - host: grpc.mengxin.ml
+          http:
+              paths:
+                  - path: /
+                    backend:
+                        serviceName: grpc-mengxin-ml-clusterip
+                        servicePort: 50051
