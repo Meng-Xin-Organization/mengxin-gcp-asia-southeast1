@@ -1,4 +1,4 @@
-FROM ubuntu:hirsute-20210422
+FROM ubuntu:21.04
 
 RUN apt-get update
 RUN apt-get install curl gnupg -y
