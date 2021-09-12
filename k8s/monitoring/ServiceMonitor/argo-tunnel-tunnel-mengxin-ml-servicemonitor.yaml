@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  namespace: monitoring
+  name: argo-tunnel-tunnel-mengxin-ml-servicemonitor
+  labels:
+    app: argo-tunnel-tunnel-mengxin-ml
+spec:
+  namespaceSelector:
+    matchNames:
+    - web
+  selector:
+    matchLabels:
+      app: argo-tunnel-tunnel-mengxin-ml
+  endpoints:
+    - port: metrics

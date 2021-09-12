@@ -13,6 +13,11 @@ spec:
         backend:
           serviceName: mengxin-sea1-test-vm-instance-1
           servicePort: "22"
+    - tcp:
+        port: "2101"
+        backend:
+          serviceName: mengxin-sea1-test-vm-instance-1
+          servicePort: "3389"
     # # mengxin-sea1-test-vm-instance-1 docker tls remote host traffic
     # - tcp:
     #     port: "2376"
@@ -54,3 +59,5 @@ spec:
     #     backend:
     #       serviceName: mengxin-test-app
     #       servicePort: "8081"
+    # mengxin-sea1-test-vm-instance-1 rdp traffic
+

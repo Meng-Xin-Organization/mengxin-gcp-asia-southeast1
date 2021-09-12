@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: argo-tunnel-tunnel-mengxin-ml-clusterip
+  namespace: web
+  labels:
+    app: argo-tunnel-tunnel-mengxin-ml
+spec:
+  selector:
+    pod: argo-tunnel-tunnel-mengxin-ml
+  type: ClusterIP
+  ports:
+    - name: metrics
+      port: 42217
+      targetPort: 42217

@@ -95,4 +95,5 @@ kubectl apply -f k8s/tcp/redis-mengxin-ml
 
 
 # update general kubernetes namespace: tcp
+kubectl delete validatingwebhookconfiguration admission.voyager.appscode.com
 kubectl apply -f k8s/tcp
