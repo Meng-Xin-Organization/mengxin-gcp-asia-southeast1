@@ -1,4 +1,4 @@
-FROM ubuntu:rolling
+FROM ubuntu:hirsute
 
 RUN apt-get update
 RUN apt-get install curl gnupg gpgv -y
