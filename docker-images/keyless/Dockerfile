@@ -1,4 +1,4 @@
-FROM ubuntu:hirsute
+FROM ubuntu:impish-20211015
 
 RUN apt-get update
 RUN apt-get install curl gnupg gpgv -y
