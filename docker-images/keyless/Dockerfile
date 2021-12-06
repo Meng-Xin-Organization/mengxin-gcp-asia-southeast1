@@ -1,4 +1,4 @@
-FROM ubuntu:hirsute
+FROM ubuntu:21.10
 
 RUN apt-get update
 RUN apt-get install curl gnupg gpgv -y
