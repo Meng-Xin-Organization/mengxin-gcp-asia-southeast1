@@ -27,7 +27,9 @@ before_install:
   # Testing phase
   # - docker build -t mengxin891029/test-sea-mengxin-ml -f ./docker-images/sea/dev/Dockerfile.dev ./docker-images/sea/dev
 
+
   # multi-architecture build
+  - docker run --privileged --rm tonistiigi/binfmt --install all
   - docker buildx create --name mybuilder --use
 
 # script:
