@@ -88,8 +88,8 @@ kubectl set image --namespace tcp deployments/ssl-mengxin-ml-keyless-deployment 
 kubectl apply -f k8s/tcp/common-storage-nfs
 
 
-# update mengxin-sea1-test-vm
-kubectl apply -f k8s/tcp/mengxin-sea1-test-vm
+# # update mengxin-sea1-test-vm
+# kubectl apply -f k8s/tcp/mengxin-sea1-test-vm
 
 
 # update mongo-mengxin-ml
@@ -100,6 +100,6 @@ kubectl apply -f k8s/tcp/mongo-mengxin-ml
 kubectl apply -f k8s/tcp/redis-mengxin-ml
 
 
-# update general kubernetes namespace: tcp
-kubectl delete validatingwebhookconfiguration admission.voyager.appscode.com
-kubectl apply -f k8s/tcp
+# # update general kubernetes namespace: tcp
+# kubectl delete validatingwebhookconfiguration admission.voyager.appscode.com
+# kubectl apply -f k8s/tcp
