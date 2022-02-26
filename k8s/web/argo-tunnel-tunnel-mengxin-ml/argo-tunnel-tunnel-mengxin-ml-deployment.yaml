@@ -17,23 +17,15 @@ spec:
     spec:
       containers:
         - name: argo-tunnel-tunnel-mengxin-ml
-          image: cloudflare/cloudflared:2021.2.2
-          # env:
-          #   - name: ARGO_TUNNEL_NAME
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: argo-tunnel-tunnel-mengxin-ml-secret
-          #         key: ARGO_TUNNEL_NAME
-          #   - name: ARGO_TUNNEL_ENDPOINT
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: argo-tunnel-tunnel-mengxin-ml-secret
-          #         key: ARGO_TUNNEL_ENDPOINT
-          # command: ["/bin/sed","-i s/tunnel:/tunnel:\ $ARGO_TUNNEL_NAME/g /etc/cloudflared/config.yml"]
+          image: cloudflare/cloudflared:2021.12.4
           volumeMounts:
           - name: argo-tunnel-tunnel-mengxin-ml-configmap-volume
             mountPath: /etc/cloudflared
-          command: [ "cloudflared", "tunnel", "run","--force"]
+          command: [ "cloudflared", "tunnel","--no-autoupdate","run","e6572126-7bb3-4f9b-84e6-076907a91854"]
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
       volumes:
         - name: argo-tunnel-tunnel-mengxin-ml-configmap-volume
           configMap:

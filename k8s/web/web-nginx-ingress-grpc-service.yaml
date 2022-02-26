@@ -10,6 +10,7 @@ metadata:
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
         nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
 spec:
+    loadBalancerIP: 34.87.68.76
     tls:
         - hosts:
               - grpc.mengxin.ml
